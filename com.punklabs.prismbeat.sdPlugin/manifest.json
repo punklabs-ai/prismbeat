@@ -1,0 +1,264 @@
+{
+  "$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+  "Name": "PrismBeat Visualizer",
+  "UUID": "com.punklabs.prismbeat",
+  "Version": "1.0.2.0",
+  "Author": "PUNK LABS",
+  "Description": "Live Spotify visuals, now-playing display and tactile music controls for Stream Deck +, + XL and XL.",
+  "Category": "PrismBeat Visualizer",
+  "CategoryIcon": "imgs/category",
+  "Icon": "imgs/plugin",
+  "CodePath": "bin/plugin.js",
+  "SDKVersion": 3,
+  "Software": {
+    "MinimumVersion": "6.9"
+  },
+  "Nodejs": {
+    "Version": "20"
+  },
+  "OS": [
+    {
+      "Platform": "mac",
+      "MinimumVersion": "13"
+    },
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Actions": [
+    {
+      "Name": "Now Playing Marquee",
+      "UUID": "com.punklabs.prismbeat.now-playing",
+      "Icon": "imgs/action",
+      "Controllers": [
+        "Encoder"
+      ],
+      "Encoder": {
+        "Icon": "imgs/action",
+        "layout": "layouts/marquee.json",
+        "TriggerDescription": {
+          "Rotate": "Control Spotify",
+          "Push": "Play / Pause",
+          "Touch": "Play / Pause"
+        }
+      },
+      "PropertyInspectorPath": "ui/marquee.html",
+      "States": [
+        {
+          "Image": "imgs/action"
+        }
+      ]
+    },
+    {
+      "Name": "Open Spotify",
+      "UUID": "com.punklabs.prismbeat.open",
+      "Icon": "imgs/action",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/open",
+          "TitleAlignment": "bottom"
+        }
+      ]
+    },
+    {
+      "Name": "Play / Stop",
+      "UUID": "com.punklabs.prismbeat.playback",
+      "Icon": "imgs/play",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/play"
+        },
+        {
+          "Image": "imgs/stop"
+        }
+      ]
+    },
+    {
+      "Name": "Previous Track",
+      "UUID": "com.punklabs.prismbeat.previous",
+      "Icon": "imgs/previous",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/previous"
+        }
+      ]
+    },
+    {
+      "Name": "Next Track",
+      "UUID": "com.punklabs.prismbeat.next",
+      "Icon": "imgs/next",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/next"
+        }
+      ]
+    },
+    {
+      "Name": "Shuffle",
+      "UUID": "com.punklabs.prismbeat.shuffle",
+      "Icon": "imgs/shuffle-off",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/shuffle-off"
+        },
+        {
+          "Image": "imgs/shuffle-on"
+        }
+      ]
+    },
+    {
+      "Name": "Repeat",
+      "UUID": "com.punklabs.prismbeat.repeat",
+      "Icon": "imgs/repeat-off",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/repeat-off"
+        },
+        {
+          "Image": "imgs/repeat-on"
+        }
+      ]
+    },
+    {
+      "Name": "Mute / Unmute",
+      "UUID": "com.punklabs.prismbeat.mute",
+      "Icon": "imgs/volume-on",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/volume-on"
+        },
+        {
+          "Image": "imgs/volume-muted"
+        }
+      ]
+    },
+    {
+      "Name": "Restart Track",
+      "UUID": "com.punklabs.prismbeat.restart",
+      "Icon": "imgs/restart",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/restart"
+        }
+      ]
+    },
+    {
+      "Name": "Back 15 Seconds",
+      "UUID": "com.punklabs.prismbeat.seek-back-15",
+      "Icon": "imgs/seek-back-15",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/seek-back-15"
+        }
+      ]
+    },
+    {
+      "Name": "Forward 15 Seconds",
+      "UUID": "com.punklabs.prismbeat.seek-forward-15",
+      "Icon": "imgs/seek-forward-15",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/seek-forward-15"
+        }
+      ]
+    },
+    {
+      "Name": "Volume Down",
+      "UUID": "com.punklabs.prismbeat.volume-down",
+      "Icon": "imgs/volume-down",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/volume-down"
+        }
+      ]
+    },
+    {
+      "Name": "Volume Up",
+      "UUID": "com.punklabs.prismbeat.volume-up",
+      "Icon": "imgs/volume-up",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/volume-up"
+        }
+      ]
+    },
+    {
+      "Name": "Copy Track Link",
+      "UUID": "com.punklabs.prismbeat.copy-track-link",
+      "Icon": "imgs/copy-link",
+      "Controllers": [
+        "Keypad"
+      ],
+      "States": [
+        {
+          "Image": "imgs/copy-link"
+        }
+      ]
+    },
+    {
+      "Name": "Visual Preset",
+      "UUID": "com.punklabs.prismbeat.visual-preset",
+      "Icon": "imgs/visual-preset",
+      "Controllers": [
+        "Keypad"
+      ],
+      "PropertyInspectorPath": "ui/visual-preset.html",
+      "States": [
+        {
+          "Image": "imgs/visual-preset"
+        }
+      ]
+    },
+    {
+      "Name": "Now Playing Artwork",
+      "UUID": "com.punklabs.prismbeat.artwork",
+      "Icon": "imgs/artwork",
+      "Controllers": [
+        "Keypad"
+      ],
+      "PropertyInspectorPath": "ui/artwork.html",
+      "States": [
+        {
+          "Image": "imgs/artwork"
+        }
+      ]
+    }
+  ]
+}

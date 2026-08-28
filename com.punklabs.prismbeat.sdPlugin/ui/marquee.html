@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spotify Dial</title>
+    <link rel="stylesheet" href="artwork.css">
+  </head>
+  <body>
+    <main>
+      <label for="dial-role">Artist and track screen</label>
+      <select id="dial-role">
+        <option value="auto">Automatic from dial position</option>
+        <option value="track">Previous / next track</option>
+        <option value="volume">Spotify volume</option>
+        <option value="seek">Seek −/+ 5 seconds</option>
+        <option value="none">No action</option>
+      </select>
+      <label for="visual-role">Visualiser screen</label>
+      <select id="visual-role">
+        <option value="visual">Choose visual</option>
+        <option value="track">Previous / next track</option>
+        <option value="volume">Spotify volume</option>
+        <option value="seek">Seek −/+ 5 seconds</option>
+        <option value="none">No action</option>
+      </select>
+      <p>These settings are saved separately for each dial. Keep at least one dial on “Choose visual” if you want to change the visualisation. Pressing a dial switches display mode; touching the strip toggles playback.</p>
+    </main>
+    <script src="marquee.js"></script>
+  </body>
+</html>

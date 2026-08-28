@@ -1,0 +1,19 @@
+{
+  "name": "prismbeat-support-worker",
+  "version": "1.0.0",
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": "https://github.com/punklabs-ai/prismbeat",
+  "type": "module",
+  "scripts": {
+    "types": "wrangler types worker-configuration.d.ts --include-runtime=false",
+    "typecheck": "tsc --noEmit",
+    "deploy:check": "wrangler deploy --dry-run",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20260825.1",
+    "typescript": "5.9.3",
+    "wrangler": "4.125.0"
+  }
+}

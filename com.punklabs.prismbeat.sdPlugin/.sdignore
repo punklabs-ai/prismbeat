@@ -1,0 +1,7 @@
+native/
+tests/
+scripts/build-audio-analyzer.sh
+scripts/build-windows-helper.sh
+package.json
+package-lock.json
+node_modules/.package-lock.json

@@ -1,0 +1,5 @@
+[allowlist]
+description = "Public Cloudflare Turnstile site key"
+regexes = [
+  '''0x4AAAAAAEePEze3_xWcvb3I''',
+]

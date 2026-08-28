@@ -1,0 +1,54 @@
+name: Windows compatibility
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - runtime: win-x64
+            architecture: x64
+            run_self_test: true
+          - runtime: win-arm64
+            architecture: arm64
+            run_self_test: false
+    defaults:
+      run:
+        working-directory: com.punklabs.prismbeat.sdPlugin
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: com.punklabs.prismbeat.sdPlugin/package-lock.json
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: "9.0.x"
+      - name: Install plugin dependencies
+        run: npm ci
+      - name: Test Windows plugin routing
+        run: node tests/windows-platform-integration.mjs
+      - name: Build Windows helper
+        run: dotnet build native/windows/PrismBeat.Windows.csproj --configuration Release --runtime ${{ matrix.runtime }}
+      - name: Test Windows audio analysis
+        if: matrix.run_self_test
+        run: dotnet run --project native/windows/PrismBeat.Windows.csproj --configuration Release --runtime ${{ matrix.runtime }} -- self-test
+      - name: Publish self-contained Windows helper
+        run: dotnet publish native/windows/PrismBeat.Windows.csproj --configuration Release --runtime ${{ matrix.runtime }} --self-contained true --output bin/windows-${{ matrix.architecture }}
+      - name: Upload Windows helper
+        uses: actions/upload-artifact@v7
+        with:
+          name: prismbeat-windows-${{ matrix.architecture }}
+          path: com.punklabs.prismbeat.sdPlugin/bin/windows-${{ matrix.architecture }}/prismbeat-windows.exe
+          if-no-files-found: error
+          retention-days: 14

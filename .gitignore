@@ -1,0 +1,14 @@
+.DS_Store
+**/node_modules/
+*.log
+*.streamDeckPlugin
+.env
+.env.*
+!.env.example
+coverage/
+.wrangler/
+visual-previews/
+**/native/windows/bin/
+**/native/windows/obj/
+**/bin/windows-x64/
+**/bin/windows-arm64/

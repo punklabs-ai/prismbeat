@@ -1,0 +1,16 @@
+{
+  "name": "com.punklabs.prismbeat",
+  "version": "1.0.2",
+  "private": true,
+  "license": "Apache-2.0",
+  "repository": "https://github.com/punklabs-ai/prismbeat",
+  "type": "module",
+  "scripts": {
+    "build:audio": "./scripts/build-audio-analyzer.sh",
+    "build:windows": "./scripts/build-windows-helper.sh",
+    "test": "node tests/audio-analyzer-self-test.mjs && node tests/spotify-state-self-test.mjs && node tests/spotify-control-self-test.mjs && node tests/macos-helper-permission.mjs && node tests/mock-integration.mjs && node tests/windows-platform-integration.mjs && node tests/visual-silence-test.mjs"
+  },
+  "dependencies": {
+    "ws": "^8.18.3"
+  }
+}
